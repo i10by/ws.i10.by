@@ -1,0 +1,54 @@
+.icon {
+    display: block;
+    float: left;
+    width: 17px;
+    height: inherit;
+    margin-right: 7px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.icon.icon-list {
+    background-image: url("../images/icons/list.png");
+}
+.icon.icon-list-green {
+    background-image: url("../images/icons/list-green.png");
+}
+div#control-bar a:hover .icon.icon-list-green {
+    background-image: url("../images/icons/list-green-hov.png");
+}
+.icon.icon-dol {
+    background-image: url("../images/icons/dol.png");
+}
+div#control-bar a:hover .icon.icon-dol {
+    background-image: url("../images/icons/dol-hov.png");
+}
+.icon.icon-not {
+    background-image: url("../images/icons/not.png");
+}
+div#control-bar a:hover .icon.icon-not {
+    background-image: url("../images/icons/not-hov.png");
+}
+.icon.icon-set {
+    background-image: url("../images/icons/set.png");
+}
+div#control-bar a:hover .icon.icon-set {
+    background-image: url("../images/icons/set-hov.png");
+}
+.icon.icon-log {
+    background-image: url("../images/icons/log.png");
+}
+div#control-bar a:hover .icon.icon-log {
+    background-image: url("../images/icons/log-hov.png");
+}
+.icon.icon-back {
+    background-image: url("../images/icons/back.png");
+}
+.icon.icon-coll {
+    background-image: url("../images/icons/coll.png");
+}
+div#control-bar a:hover .icon.icon-coll {
+    background-image: url("../images/icons/coll-hov.png");
+}
+.icon.icon-evil {
+    background-image: url("../images/icons/evil.png");
+}

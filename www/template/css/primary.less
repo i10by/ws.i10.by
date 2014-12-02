@@ -1,0 +1,495 @@
+@color-back: #f6f6f6;
+@color-page-back: #fff;
+@color-controlbar-back: #2f3444;
+@color-radiant: #6587b3;
+@color-font-light: #fff;
+@color-font-dark: #2f3444;
+@color-font-radiant: #6e7788;
+@color-font-warning: #a55152;
+
+@max-width: 1400px;
+@min-width: 1000px;
+@controlbar-width: 230px;
+@notesbar-width: 60px;
+@header-height: 44px;
+@page-body-padding: 20px;
+@page-body-padding-top: @header-height + @page-body-padding;
+
+.bb2(@clr) {
+  border-bottom: 2px solid @clr;
+}
+.tr1 {
+  transition: background-color 0.1s ease, color 0.1s ease;
+}
+
+@font-face {
+  font-family: 'pt sans';
+  font-weight: normal;
+  src: url("../fonts/PTSansRegular.ttf");
+}
+@font-face {
+  font-family: 'pt sans';
+  font-weight: bold;
+  src: url("../fonts/PTSansBold.ttf");
+}
+@font-face {
+  font-family: 'pt sans narrow';
+  font-weight: normal;
+  src: url("../fonts/PTSansNarrowRegular.ttf");
+}
+@font-face {
+  font-family: 'pt sans narrow';
+  font-weight: bold;
+  src: url("../fonts/PTSansNarrowBold.ttf");
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+* {
+  margin: 0;
+  padding: 0;
+  cursor: default;
+  box-sizing: border-box;
+  -webkit-backface-visibility: hidden;
+  font-family: 'pt sans', arial, tahoma;
+}
+a {
+  cursor: pointer;
+  color: @color-font-light;
+  text-decoration: none;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  background: @color-back;
+}
+#page {
+  display: table;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 @notesbar-width 0 @controlbar-width;
+  width: 100%;
+  min-width: @min-width;
+  max-width: @max-width;
+  height: 100%;
+  background: @color-page-back;
+  overflow: hidden;
+}
+div#page > * {
+  position: relative;
+}
+div#page > header, div#page > footer {
+  position: fixed;
+  top: 0;
+  left: @controlbar-width;
+  right: @notesbar-width;
+  padding: 0 14px;
+  font-size: 15px;
+  color: @color-font-dark;
+  line-height: @header-height;
+  height: @header-height;
+  background: #fff;
+  z-index: 3000;
+  .bb2(#ccc);
+  overflow: hidden;
+}
+div#page > header .text {
+  width: 200px;
+}
+div#page > header .text a {
+  color: @color-font-dark;
+  line-height: 16px;
+  margin-top: 14px;
+}
+div#page > header .text a:hover {
+  color: #000;
+}
+div#page > header .text.with-border {
+  padding-right: 10px;
+  margin-right: 10px;
+  border-right: 1px solid #ccc;
+}
+div#page > header * {
+  float: left;
+}
+div#page > header .right {
+  float: right;
+}
+div#page > header .h-menu {
+
+}
+div#page > header .h-menu a {
+  margin-top: 11px;
+  height: 23px;
+  line-height: 13px;
+  font-size: 13px;
+  padding: 5px 5px;
+  float: left;
+  margin-right: 5px;
+  border-radius: 2px;
+  border: 0;
+  color: @color-font-dark;
+  background-color: inherit;
+  .tr1;
+}
+div#page > header .h-menu a:hover, div#page > header .h-menu a.active {
+  color: @color-font-light;
+  background-color: @color-controlbar-back;
+}
+div#page > footer {
+  top: auto;
+  bottom: 0;
+  border-top: 2px solid #ccc;
+  border-bottom: 0;
+}
+div#page > div.page-body {
+  display: table;
+  padding: @page-body-padding-top @page-body-padding @page-body-padding;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+div#window {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  visibility: hidden;
+  z-index: 3100;
+}
+div#window > * {
+  position: relative;
+  visibility: visible;
+}
+@media (min-width: @max-width) {
+  div#window {
+    width: @max-width;
+    left: 50%;
+    margin-left: -(@max-width / 2);
+  }
+  div#page > header, div#page > footer {
+    left: auto;
+    right: auto;
+    width: @max-width - @controlbar-width - @notesbar-width;
+  }
+}
+div#control-bar, div#notes-bar {
+  height: 100%;
+  background: @color-controlbar-back;
+}
+div#control-bar a, div#notes-bar a {
+  display: block;
+  width: inherit;
+  padding: 0 10px;
+  font-size: 13px;
+}
+div#control-bar a:first-child, div#notes-bar a:first-child {
+  height: @header-height;
+  line-height: @header-height;
+}
+div#control-bar a:nth-child(2), div#notes-bar a:nth-child(2) {
+  margin-top: 40px;
+}
+div#control-bar {
+  width: @controlbar-width;
+  float: left;
+}
+div#control-bar .locker {
+  position: absolute;
+  top: @header-height;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-image: url("../images/workspace.png");
+  background-position: center;
+  background-color: @color-controlbar-back;
+  background-repeat: no-repeat;
+  display: none;
+}
+div#control-bar .locker.show {
+  display: block;
+}
+div#control-bar a {
+  height: 40px;
+  line-height: 40px;
+  border-left: 4px solid transparent;
+  font-size: 13px;
+  cursor: pointer;
+  opacity: 0.6;
+}
+div#control-bar a > * {
+  cursor: pointer;
+}
+div#control-bar a:hover, div#control-bar a.active {
+  opacity: 1;
+}
+div#control-bar a:hover, div#control-bar a:last-child:hover {
+  border-color: transparent;
+  background-color: lighten(@color-controlbar-back, 10%);
+}
+div#control-bar a.active, div#control-bar a.active:hover {
+  border-color: @color-radiant;
+  background-color: darken(@color-controlbar-back, 5%);
+}
+div#control-bar a .icon {
+  margin: 11px 15px 0 5px;
+  height: 17px;
+  background-color: @color-radiant;
+}
+div#control-bar a:first-child {
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+  color: @color-font-light;
+  background-color: @color-radiant;
+  .bb2(darken(@color-radiant, 25%));
+  opacity: 1;
+  border-left: 0;
+}
+div#control-bar a:nth-child(2), div#control-bar a.with-inp {
+  cursor: default;
+  height: 46px;
+  background-color: lighten(@color-controlbar-back, 10%);
+  margin-bottom: 10px;
+  border-left: 0;
+  opacity: 1;
+}
+div#control-bar a.with-inp {
+  background-color: transparent;
+  height: auto;
+}
+div#control-bar a:nth-child(2) > * {
+  cursor: default;
+}
+div#control-bar a:nth-child(2) div.profile-image {
+  margin-top: 8px;
+  margin-left: 2px;
+  width: 32px;
+  height: 32px;
+  float: left;
+  border-radius: 50%;
+  background-position: center;
+  background-image: url("../images/unk.jpg");
+  background-size: 100%;
+}
+div#control-bar a:nth-child(2) div.name {
+  width: @controlbar-width - 62px;
+  height: 14px;
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 14px;
+  float: right;
+  white-space: nowrap;
+}
+div#control-bar a:last-child {
+  position: absolute;
+  bottom: 0;
+  opacity: 1;
+  background-color: darken(@color-controlbar-back, 5%);
+}
+div#notes-bar {
+  width: @notesbar-width;
+  float: right;
+}
+div#notes-bar a {
+  width: @notesbar-width - 10px;
+  height: 36px;
+  padding: 0;
+  line-height: 36px;
+  font-size: 12px;
+  text-align: center;
+  margin: 8px 0 0 5px;
+  color: @color-font-light;
+  border: 2px solid @color-radiant;
+  border-top-width: 0;
+  border-bottom-width: 0;
+  background-color: lighten(@color-controlbar-back, 5%);
+  .tr1;
+}
+div#notes-bar a:hover {
+  background-color: lighten(@color-radiant, 10%);
+}
+div#notes-bar a:first-child {
+  width: inherit;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: lighten(@color-controlbar-back, 10%) url("../images/icons/notes.png") no-repeat center;
+  .bb2(darken(@color-controlbar-back, 5%));
+}
+
+// Page content
+.block {
+  width: inherit;
+  overflow: hidden;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+.block > * {
+  margin-bottom: 20px;
+}
+.block:last-child {
+  border-bottom: 0;
+}
+.block > *:last-child {
+  margin-bottom: 0;
+}
+.block .name {
+  width: 100%;
+  font-size: 19px;
+  font-weight: bold;
+  float: left;
+}
+.block .name .title, .block .name .title > * {
+  display: block;
+  color: @color-font-dark;
+  float: left;
+}
+.block .name .title span.num {
+  margin-right: 5px;
+}
+.block .name .title a:hover {
+  text-decoration: underline;
+}
+.block .name .price {
+  color: @color-radiant;
+  border-bottom: 1px dotted @color-radiant;
+}
+.block .status {
+}
+.block .status .text {
+  margin-right: 5px;
+  color: @color-font-dark;
+  border-bottom: 1px dotted @color-font-dark;
+}
+.block .status .val {
+  color: @color-font-warning;
+}
+.block .content {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.3em;
+  overflow: hidden;
+  color: #000;
+  background-color: #fff;
+}
+.block .info {
+  width: 100%;
+}
+
+// Labels
+.label {
+  font-size: 13px;
+  border-radius: 2px;
+  line-height: 21px;
+  padding: 0 4px;
+  float: left;
+  margin-right: 5px;
+  color: @color-font-light;
+}
+.label.large {
+  padding: 2px 8px;
+}
+div#page > header > .label {
+  margin-top: 11px;
+}
+div#control-bar > a > .label {
+  margin-top: 10px;
+}
+.label.right {
+  margin-right: 0;
+  margin-left: 5px;
+  float: right;
+}
+.label.label-radiant {
+  background-color: @color-radiant;
+}
+
+// Inputs
+input {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-top-width: 0;
+  border-bottom-width: 0;
+  box-shadow: 0 2px 0 #ccc;
+  border-radius: 3px;
+  outline: none;
+  padding: 10px;
+  font-size: 14px;
+  cursor: text;
+  background-color: #eee;
+  color: @color-font-dark;
+  margin-bottom: 10px;
+}
+
+// Buttons
+button {
+  margin: 0 5px 0 0;
+  outline: none;
+  border: 0;
+  background-color: @color-controlbar-back;
+  padding: 4px 10px;
+  color: @color-font-light;
+  cursor: pointer;
+}
+button.dark {
+  border-radius: 2px;
+  border: 2px solid @color-radiant;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-bottom-color: darken(@color-radiant, 10%);
+  background-color: @color-radiant;
+  color: darken(@color-font-light, 10%);
+}
+button.dark:hover {
+  background-color: lighten(@color-radiant, 10%);
+  border-top-color: lighten(@color-radiant, 10%);
+  border-bottom-color: @color-radiant;
+  color: @color-font-light;
+}
+button.dark:active {
+  background-color: darken(@color-radiant, 10%);
+  border-top-color: darken(@color-radiant, 20%);
+  border-bottom-color: darken(@color-radiant, 10%);
+  color: darken(@color-font-light, 25%)
+}
+button.full {
+  width: 100%;
+  padding: 6px 10px;
+}
+
+// LINKS
+.form-footer a {
+  color: @color-font-dark;
+  text-decoration: underline;
+  line-height: 30px;
+  font-size: 14px;
+}
+.form-footer a:hover {
+  text-decoration: none;
+}
+
+// Others
+.wall-in {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 165px;
+  margin: -150px 0 0 -150px;
+}
+.wall-in .title {
+  float: left;
+  margin-bottom: 10px;
+  font-size: 17px;
+  font-weight: bold;
+  border-bottom: 1px dotted @color-font-dark;
+  color: @color-font-dark;
+}
