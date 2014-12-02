@@ -234,6 +234,7 @@ div#control-bar a:first-child {
   color: #ffffff;
   background-color: #6587b3;
   border-bottom: 2px solid #324966;
+  text-shadow: 2px 2px 0 #666;
   opacity: 1;
   border-left: 0;
 }
