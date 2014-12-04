@@ -21,4 +21,8 @@
         if($url_page == "in" || $url_page == "reg") {}
         else go("in");
 
+    if(is_auth())
+        if($url_page == "in" || $url_page == "reg")
+            go("ord");
+
     include(CORE_PATH.'template.php');

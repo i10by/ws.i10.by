@@ -4,10 +4,10 @@
 
 <div class="page-body">
     <div class="wall-in in">
-        <form method="post" action="/s/in">
+        <form id="in" method="post" action="/s/in">
             <span class="title">Авторизация</span>
-            <input placeholder="E-mail">
-            <input type="password" placeholder="Пароль">
+            <input id="email" placeholder="E-mail">
+            <input id="pass" type="password" placeholder="Пароль">
             <div class="form-footer">
                 <button class="dark left">Войти</button>
                 <a href="/reg" class="right">Регистрация</a>

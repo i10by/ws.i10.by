@@ -31,7 +31,7 @@
         <span class="text">Настройки</span>
     </a>
     <div class="locker <? if(!is_auth()) echo 'show'; ?>"></div>
-    <a href="/in">
+    <a href="/s/out">
         <span class="icon icon-log"></span>
         <span class="text">Покинуть учётную запись</span>
     </a>

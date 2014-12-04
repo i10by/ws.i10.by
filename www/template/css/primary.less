@@ -6,6 +6,7 @@
 @color-font-dark: #2f3444;
 @color-font-radiant: #6e7788;
 @color-font-warning: #a55152;
+@color-warning: #b76e6a;
 
 @max-width: 1400px;
 @min-width: 1000px;
@@ -91,10 +92,12 @@ div#page > header, div#page > footer {
   color: @color-font-dark;
   line-height: @header-height;
   height: @header-height;
-  background: #fff;
   z-index: 3000;
-  .bb2(#ccc);
   overflow: hidden;
+}
+div#page > header {
+  .bb2(#ccc);
+  background-color: #eee;
 }
 div#page > header .text {
   width: 200px;
@@ -143,7 +146,7 @@ div#page > footer {
   top: auto;
   bottom: 0;
   border-top: 2px solid #ccc;
-  border-bottom: 0;
+  background-color: #fff;
 }
 div#page > div.page-body {
   display: table;
@@ -428,6 +431,9 @@ input {
   background-color: #eee;
   color: @color-font-dark;
   margin-bottom: 10px;
+}
+input.error {
+  box-shadow: 0 2px 0 @color-warning;
 }
 
 // Buttons
