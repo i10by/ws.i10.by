@@ -220,21 +220,21 @@ div#control-bar a:last-child:hover {
 }
 div#control-bar a.active,
 div#control-bar a.active:hover {
-  border-color: #6587b3;
+  border-color: #93b38e;
   background-color: #252835;
 }
 div#control-bar a .icon {
   margin: 11px 15px 0 5px;
   height: 17px;
-  background-color: #6587b3;
+  background-color: #93b38e;
 }
 div#control-bar a:first-child {
   text-align: center;
   font-weight: bold;
   font-size: 15px;
   color: #ffffff;
-  background-color: #6587b3;
-  border-bottom: 2px solid #324966;
+  background-color: #93b38e;
+  border-bottom: 2px solid #53744e;
   text-shadow: 2px 2px 0 #666;
   opacity: 1;
   border-left: 0;
@@ -294,14 +294,14 @@ div#notes-bar a {
   text-align: center;
   margin: 8px 0 0 5px;
   color: #ffffff;
-  border: 2px solid #6587b3;
+  border: 2px solid #93b38e;
   border-top-width: 0;
   border-bottom-width: 0;
   background-color: #394053;
   transition: background-color 0.1s ease, color 0.1s ease;
 }
 div#notes-bar a:hover {
-  background-color: #87a2c4;
+  background-color: #b0c8ac;
 }
 div#notes-bar a:first-child {
   width: inherit;
@@ -346,8 +346,8 @@ div#notes-bar a:first-child {
   text-decoration: underline;
 }
 .block .name .price {
-  color: #6587b3;
-  border-bottom: 1px dotted #6587b3;
+  color: #93b38e;
+  border-bottom: 1px dotted #93b38e;
 }
 .block .status .text {
   margin-right: 5px;
@@ -394,7 +394,7 @@ div#control-bar > a > .label {
   float: right;
 }
 .label.label-radiant {
-  background-color: #6587b3;
+  background-color: #93b38e;
 }
 input {
   width: 100%;
@@ -425,23 +425,23 @@ button {
 }
 button.dark {
   border-radius: 2px;
-  border: 2px solid #6587b3;
+  border: 2px solid #93b38e;
   border-left-width: 0;
   border-right-width: 0;
-  border-bottom-color: #4c6e99;
-  background-color: #6587b3;
+  border-bottom-color: #769e70;
+  background-color: #93b38e;
   color: #e6e6e6;
 }
 button.dark:hover {
-  background-color: #87a2c4;
-  border-top-color: #87a2c4;
-  border-bottom-color: #6587b3;
+  background-color: #b0c8ac;
+  border-top-color: #b0c8ac;
+  border-bottom-color: #93b38e;
   color: #ffffff;
 }
 button.dark:active {
-  background-color: #4c6e99;
-  border-top-color: #3b5577;
-  border-bottom-color: #4c6e99;
+  background-color: #769e70;
+  border-top-color: #5e8358;
+  border-bottom-color: #769e70;
   color: #bfbfbf;
 }
 button.full {
